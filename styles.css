@@ -54,10 +54,10 @@ html, body {
   top: 0;
   bottom: 0;
   /* Расширяем зону, чтобы эмодзи заходили на блоки с вопросами */
-  width: clamp(200px, 35vw, 500px); 
+  width: 350px; 
   z-index: 0;
   pointer-events: none;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .side-ribbon-left {
