@@ -21,7 +21,7 @@
     <span class="side-ribbon__emoji side-ribbon__emoji--l4">🐈</span>
     <span class="side-ribbon__emoji side-ribbon__emoji--l5">🎵</span>
     <span class="side-ribbon__glyph side-ribbon__glyph--l1">♪</span>
-    <span class="side-ribbon__glyph side-ribbon__glyph--l2">💓</span>
+    <span class="side-ribbon__glyph side-ribbon__glyph--l2">🩷</span>
     <span class="side-ribbon__dot side-ribbon__dot--la"></span>
     <span class="side-ribbon__dot side-ribbon__dot--lb"></span>
     <span class="side-ribbon__emoji side-ribbon__emoji--l6">🎸</span>
@@ -35,7 +35,7 @@
     <span class="side-ribbon__emoji side-ribbon__emoji--r4">🐱</span>
     <span class="side-ribbon__emoji side-ribbon__emoji--r5">🎷</span>
     <span class="side-ribbon__glyph side-ribbon__glyph--r1">♫</span>
-    <span class="side-ribbon__glyph side-ribbon__glyph--r2">💕</span>
+    <span class="side-ribbon__glyph side-ribbon__glyph--r2">🩷</span>
     <span class="side-ribbon__dot side-ribbon__dot--ra"></span>
     <span class="side-ribbon__dot side-ribbon__dot--rb"></span>
     <span class="side-ribbon__emoji side-ribbon__emoji--r6">🎻</span>
@@ -113,5 +113,22 @@
   </div>
 
   <script src="./app.js"></script>
+  <script>
+    (function() {
+      const setupScreen = document.getElementById('setup-screen');
+      const gameScreen = document.getElementById('game-screen');
+
+      function updateBodyClass() {
+        const isSetup = !setupScreen.classList.contains('hidden');
+        document.body.classList.toggle('screen-setup', isSetup);
+      }
+
+      const observer = new MutationObserver(updateBodyClass);
+      observer.observe(setupScreen, { attributes: true, attributeFilter: ['class'] });
+      observer.observe(gameScreen, { attributes: true, attributeFilter: ['class'] });
+
+      updateBodyClass();
+    })();
+  </script>
 </body>
 </html>
